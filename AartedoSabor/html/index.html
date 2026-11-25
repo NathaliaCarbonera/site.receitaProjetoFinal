@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Arte do Sabor</title>
+    <!-- Link do framework W3.CSS -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/6/w3.css">
+    <!-- Link do nosso arquivo de estilos -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- MENU DE NAVEGAÇÃO E LOGO -->
+    <header class="w3-bar menu">
+        <!-- Logo do site -->
+        <a href="#inicio" class="w3-bar-item w3-button logo">
+            🍓 A Arte do Sabor
+        </a>
+        <!-- Links que levam para as partes do site -->
+        <nav class="w3-right">
+            <a href="#inicio" class="w3-bar-item w3-button">Início</a>
+            <a href="#receitas" class="w3-bar-item w3-button">Receitas</a>
+            <a href="#contato" class="w3-bar-item w3-button">Contato</a>
+        </nav>
+    </header>
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main id="inicio">
+        <!-- CARROSSEL DE IMAGENS -->
+        <section class="w3-content carrossel w3-display-container">
+
+            <!-- Primeira imagem do carrossel -->
+            <div class="meusSlides w3-animate-opacity">
+                <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061"
+                    alt="Mesa com alimentos" class="imagem-carrossel">
+                <div class="texto-carrossel">
+                    <h2>Comida boa é feita com carinho!</h2>
+                    <p>Descubra receitas para todos os momentos.</p>
+                </div>
+            </div>
+            <!-- Segunda imagem do carrossel -->
+            <div class="meusSlides w3-animate-opacity">
+                <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601"
+                    alt="Prato de macarrão" class="imagem-carrossel">
+                <div class="texto-carrossel">
+                    <h2>Um sabor especial em cada receita</h2>
+                    <p>Inspire-se e prepare algo gostoso.</p>
+                </div>
+            </div>
+            <!-- Terceira imagem do carrossel -->
+            <div class="meusSlides w3-animate-opacity">
+                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1"
+                    alt="Comida preparada" class="imagem-carrossel">
+                <div class="texto-carrossel">
+                    <h2>Momentos que merecem uma boa comida</h2>
+                    <p>Reúna quem você gosta e aproveite!</p>
+                </div>
+            </div>
+            <!-- Botões para passar ou voltar as imagens -->
+            <button class="w3-button w3-display-left botao-slide"
+                onclick="mudarSlide(-1)">&#10094;</button>
+            <button class="w3-button w3-display-right botao-slide"
+                onclick="mudarSlide(1)">&#10095;</button>
+        </section>
+        <!-- APRESENTAÇÃO DO SITE -->
+        <section class="w3-container w3-center apresentacao">
+            <h2 class="titulo">Bem-vindo ao A Arte do Sabor!</h2>
+            <!-- Texto com efeito de entrada do W3.CSS -->
+            <p class="w3-animate-opacity">
+                Aqui você encontra ideias de receitas para preparar
+                em casa e compartilhar bons momentos.
+            </p>
+        </section>
+        <!-- ÁREA DOS CARDS DE RECEITAS -->
+        <section id="receitas" class="w3-container receitas">
+            <h2 class="w3-center titulo">Nossas receitas</h2>
+            <!-- Container que organiza os cards -->
+            <div class="w3-row-padding">
+                <!-- Primeiro card -->
+                <div class="w3-third w3-margin-bottom">
+                    <div class="w3-card-4 card-receita">
+                        <img src="https://images.unsplash.com/photo-1574894709920-11b28e7367e3"
+                            alt="Lasanha" class="imagem-card">
+                        <div class="w3-container">
+                            <h3>Lasanha</h3>
+                            <p>
+                                Uma receita clássica e deliciosa
+                                para compartilhar com a família.
+                            </p>
+                            <button class="w3-button botao"
+                                onclick="mostrarReceita('lasanha')">
+                                Ver receita
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Segundo card -->
+                <div class="w3-third w3-margin-bottom">
+                    <div class="w3-card-4 card-receita">
+                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587"
+                            alt="Bolo de chocolate" class="imagem-card">
+                        <div class="w3-container">
+                            <h3>Bolo de chocolate</h3>
+                            <p>
+                                Uma opção doce para deixar
+                                qualquer momento mais gostoso.
+                            </p>
+                            <button class="w3-button botao"
+                                onclick="mostrarReceita('bolo')">
+                                Ver receita
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Terceiro card -->
+                <div class="w3-third w3-margin-bottom">
+                    <div class="w3-card-4 card-receita">
+                        <img src="https://images.unsplash.com/photo-1547592180-85f173990554"
+                            alt="Prato de comida" class="imagem-card">
+                        <div class="w3-container">
+                            <h3>Prato especial</h3>
+                            <p>
+                                Uma refeição saborosa para
+                                aproveitar em qualquer ocasião.
+                            </p>
+                            <button class="w3-button botao"
+                                onclick="mostrarReceita('prato')">
+                                Ver receita
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- MODAL PARA MOSTRAR AS RECEITAS -->
+        <div id="modalReceita" class="w3-modal">
+            <div class="w3-modal-content w3-card-4 w3-animate-zoom">
+                <!-- Cabeçalho do modal -->
+                <header class="w3-container modal-cabecalho">
+                    <span onclick="fecharReceita()"
+                        class="w3-button w3-display-topright">&times;</span>
+                    <h2 id="tituloReceita">Receita</h2>
+                </header>
+                <!-- Conteúdo da receita -->
+                <div class="w3-container">
+                    <p id="textoReceita"></p>
+                </div>
+                <!-- Botão para fechar -->
+                <footer class="w3-container w3-padding">
+                    <button class="w3-button botao" onclick="fecharReceita()">
+                        Fechar
+                    </button>
+                </footer>
+            </div>
+        </div>
+        <!-- FORMULÁRIO DE CADASTRO -->
+        <section id="contato" class="w3-container contato">
+            <h2 class="w3-center titulo">Cadastre-se</h2>
+            <p class="w3-center">
+                Receba novidades e fique por dentro das nossas receitas!
+            </p>
+            <!-- Formulário com validação dos campos -->
+            <form id="formulario" class="w3-container formulario">
+                <!-- Campo para o nome -->
+                <label for="nome">Nome:</label>
+                <input class="w3-input w3-border w3-round"
+                    type="text" id="nome" required minlength="3"
+                    placeholder="Digite seu nome">
+                <!-- Campo para o e-mail -->
+                <label for="email">E-mail:</label>
+                <input class="w3-input w3-border w3-round"
+                    type="email" id="email" required
+                    placeholder="Digite seu e-mail">
+                <!-- Escolha de preferência -->
+                <label for="preferencia">Receita favorita:</label>
+                <select class="w3-select w3-border w3-round"
+                    id="preferencia" required>
+                    <option value="" disabled selected>
+                        Escolha uma opção
+                    </option>
+                    <option value="Doces">Doces</option>
+                    <option value="Salgadas">Salgadas</option>
+                    <option value="Massas">Massas</option>
+                </select>
+                <!-- Campo para mensagem -->
+                <label for="mensagem">Mensagem:</label>
+                <textarea class="w3-input w3-border w3-round"
+                    id="mensagem" placeholder="Deixe sua mensagem"></textarea>
+                <!-- Caixa de confirmação -->
+                <p>
+                    <input type="checkbox" id="aceite" required>
+                    <label for="aceite">
+                        Aceito realizar meu cadastro.
+                    </label>
+                </p>
+                <!-- Botão que envia o formulário -->
+                <button type="submit" class="w3-button w3-block botao">
+                    Enviar cadastro
+                </button>
+            </form>
+        </section>
+        <!-- MODAL DE CADASTRO REALIZADO COM SUCESSO -->
+        <div id="modalSucesso" class="w3-modal">
+            <div class="w3-modal-content w3-card-4 w3-animate-zoom">
+                <header class="w3-container modal-cabecalho">
+                    <span onclick="fecharSucesso()"
+                        class="w3-button w3-display-topright">&times;</span>
+                    <h2>Cadastro realizado!</h2>
+                </header>
+                <div class="w3-container w3-center w3-padding">
+                    <h3>Obrigado por participar!</h3>
+                    <p>Seu cadastro foi enviado com sucesso.</p>
+                    <button class="w3-button botao"
+                        onclick="fecharSucesso()">
+                        Fechar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- RODAPÉ DO SITE -->
+    <footer class="w3-container w3-center rodape">
+        <h3>🍓 A Arte do Sabor</h3>
+        <p>Receitas feitas com carinho!</p>
+        <p>© 2026 - Todos os direitos reservados.</p>
+    </footer>
+    <!-- Link para o arquivo JavaScript -->
+    <script src="../js/script.js"></script>
+</body>
+</html>
