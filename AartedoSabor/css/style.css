@@ -1,174 +1,308 @@
+/* Importando fontes elegantes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap');
 
-/* Estilo geral da página */
+/* =========================================
+   CONFIGURAÇÕES GERAIS E TAMANHO DAS FONTES
+   ========================================= */
+html {
+    scroll-behavior: smooth; /* Rolagem suave ao clicar no menu */
+    font-size: 18px; /* Aumenta o tamanho base de toda a escrita do site */
+}
+
 body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #FFF9F5; /* Fundo creme suave */
+    color: #3D2C2E; /* Marrom escuro para leitura confortável */
     margin: 0;
-    background-color: #fffaf5;
-    color: #3c302c;
-    font-family: Arial, sans-serif;
+    padding: 0;
+    line-height: 1.6;
 }
 
-/* Cores e aparência do menu */
-.menu {
-    background-color: #7b2638;
-    color: white;
+h1, h2, h3, .logo {
+    font-family: 'Playfair Display', serif;
 }
 
-/* Nome e logo do site */
-.logo {
-    font-size: 22px;
-    font-weight: bold;
-}
-
-/* Cor dos links do menu */
-.menu a {
-    color: white;
-    text-decoration: none;
-}
-
-/* Muda a cor dos links quando o mouse passa por cima */
-.menu a:hover {
-    background-color: #5d1c2b;
-    color: white;
-}
-
-/* Tamanho e posição do carrossel */
-.carrossel {
-    max-width: 1200px;
+.titulo {
+    font-size: 2.3rem;
+    color: #C0392B; /* Vermelho morango sofisticado */
+    margin-bottom: 15px;
     position: relative;
 }
 
-/* Imagens do carrossel */
+/* =========================================
+   MENU DE NAVEGAÇÃO
+   ========================================= */
+.menu {
+    background-color: #C0392B;
+    color: #FFFFFF;
+    padding: 10px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.menu .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.menu .w3-button {
+    font-size: 1rem;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.menu .w3-button:hover {
+    background-color: #96281B !important;
+    color: #FFFFFF !important;
+}
+
+/* =========================================
+   CARROSSEL (CORREÇÃO DAS IMAGENS GIGANTES)
+   ========================================= */
+.carrossel {
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: #000;
+}
+
 .imagem-carrossel {
     width: 100%;
-    height: 450px;
-    object-fit: cover;
+    height: 480px; /* Altura fixa e elegante */
+    object-fit: cover; /* Corta a imagem sem distorcer */
+    filter: brightness(0.65); /* Escurece levemente para o texto aparecer bem */
+    display: block;
 }
 
-/* Texto que aparece sobre as imagens */
 .texto-carrossel {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
-    padding: 15px;
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
+    bottom: 18%;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
+    color: #FFFFFF;
+    width: 85%;
+    max-width: 800px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
 }
 
-/* Botões de passar as imagens */
-.botao-slide {
-    background-color: #7b2638;
-    color: white;
-}
-
-/* Espaço da apresentação */
-.apresentacao {
-    padding: 45px 15px;
-}
-
-/* Títulos das partes do site */
-.titulo {
-    color: #7b2638;
-    margin-bottom: 25px;
-}
-
-/* Espaço da área de receitas */
-.receitas {
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
-
-/* Aparência dos cards */
-.card-receita {
-    background-color: white;
-    padding-bottom: 15px;
-    height: 100%;
-    transition: 0.3s;
-}
-
-/* Efeito quando o mouse passa sobre os cards */
-.card-receita:hover {
-    transform: scale(1.02);
-}
-
-/* Imagens que ficam dentro dos cards */
-.imagem-card {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-}
-
-/* Botões do site */
-.botao {
-    background-color: #7b2638;
-    color: white;
-    border-radius: 5px;
+.texto-carrossel h2 {
+    font-size: 2.6rem;
     margin-bottom: 10px;
 }
 
-/* Efeito do mouse nos botões */
+.texto-carrossel p {
+    font-size: 1.25rem;
+}
+
+.botao-slide {
+    background-color: rgba(192, 57, 43, 0.85) !important;
+    color: white !important;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 0 15px;
+}
+
+.botao-slide:hover {
+    background-color: #C0392B !important;
+}
+
+/* =========================================
+   APRESENTAÇÃO E CARDS DE RECEITAS
+   ========================================= */
+.apresentacao {
+    padding: 50px 20px 30px;
+    max-width: 850px;
+    margin: 0 auto;
+    font-size: 1.15rem;
+}
+
+.receitas {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 20px 60px;
+}
+
+.card-receita {
+    background-color: #FFFFFF;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-receita:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Tamanho controlado para as fotos dos cards */
+.imagem-card {
+    width: 100%;
+    height: 240px; 
+    object-fit: cover;
+}
+
+.card-receita .w3-container {
+    padding: 20px;
+}
+
+.card-receita h3 {
+    color: #C0392B;
+    font-size: 1.5rem;
+    margin-top: 0;
+}
+
+.card-receita p {
+    font-size: 1rem;
+    color: #5C4B4D;
+    margin-bottom: 20px;
+}
+
+/* =========================================
+   BOTÕES E MODAIS
+   ========================================= */
+.botao {
+    background-color: #E67E22 !important; /* Laranja apetitoso */
+    color: #FFFFFF !important;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 12px 24px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
 .botao:hover {
-    background-color: #5d1c2b;
-    color: white;
+    background-color: #D35400 !important;
 }
 
-/* Espaço da área de contato */
+.modal-cabecalho {
+    background-color: #C0392B;
+    color: #FFFFFF;
+    padding: 15px 25px;
+}
+
+#modalReceita .w3-modal-content,
+#modalSucesso .w3-modal-content {
+    border-radius: 12px;
+    overflow: hidden;
+    font-size: 1.1rem;
+}
+
+/* =========================================
+   FORMULÁRIO DE CONTATO (ORGANIZADO E CENTRALIZADO)
+   ========================================= */
 .contato {
-    background-color: #f5e6e2;
-    padding: 40px 15px;
+    background-color: #FCEEE9; /* Destaque suave para a seção */
+    padding: 60px 20px;
+    border-top: 2px solid #F5D6CC;
 }
 
-/* Largura e organização do formulário */
+.contato > p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
 .formulario {
-    max-width: 600px;
-    margin: auto;
+    max-width: 600px; /* Limita a largura para não ficar esticado */
+    margin: 0 auto; /* Centraliza na tela */
+    background-color: #FFFFFF;
+    padding: 35px !important;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
-/* Espaço entre os campos do formulário */
 .formulario label {
     display: block;
-    margin-top: 15px;
-    margin-bottom: 5px;
+    font-weight: 600;
+    margin-top: 18px;
+    margin-bottom: 6px;
+    color: #3D2C2E;
+    font-size: 1rem;
 }
 
-/* Área do rodapé */
+.formulario input[type="text"],
+.formulario input[type="email"],
+.formulario select,
+.formulario textarea {
+    padding: 12px 15px;
+    font-size: 1rem;
+    background-color: #FAFAFA;
+    border-color: #DDD !important;
+    transition: border-color 0.3s ease;
+}
+
+.formulario input:focus,
+.formulario select:focus,
+.formulario textarea:focus {
+    border-color: #C0392B !important;
+    outline: none;
+    background-color: #FFFFFF;
+}
+
+.formulario textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+/* Alinhamento da caixinha de aceite */
+.formulario p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0 25px;
+}
+
+.formulario p label {
+    margin: 0;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.formulario input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #C0392B;
+    cursor: pointer;
+}
+
+/* =========================================
+   RODAPÉ
+   ========================================= */
 .rodape {
-    background-color: #7b2638;
-    color: white;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    background-color: #3D2C2E;
+    color: #FFF9F5;
+    padding: 35px 20px;
+    font-size: 1rem;
 }
 
-/* Ajustes para telas menores, como celulares */
-@media screen and (max-width: 600px) {
+.rodape h3 {
+    color: #F39C12;
+    margin-bottom: 8px;
+}
 
-    /* Deixa os links do menu organizados em linhas */
-    .menu {
-        text-align: center;
+/* =========================================
+   RESPONSIVIDADE (CELULARES)
+   ========================================= */
+@media (max-width: 768px) {
+    html {
+        font-size: 16px;
     }
-
-    .menu nav {
-        float: none;
-        display: flex;
-        flex-direction: column;
-    }
-
-    /* Diminui a altura das imagens do carrossel */
     .imagem-carrossel {
-        height: 280px;
+        height: 320px;
     }
-
-    /* Diminui o tamanho do texto sobre as imagens */
-    .texto-carrossel {
-        font-size: 13px;
-        bottom: 5px;
-        left: 5px;
-        right: 5px;
+    .texto-carrossel h2 {
+        font-size: 1.8rem;
     }
-
-    /* Ajusta as imagens dos cards */
-    .imagem-card {
-        height: 180px;
+    .formulario {
+        padding: 25px 20px !important;
     }
 }
